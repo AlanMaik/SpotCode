@@ -10,8 +10,8 @@ class Api::V1::DashboardController < ApplicationController
     @recent_albums = current_user
       .recently_heards
       .order(created_at: :desc)
-      .limit(4)
-      .map(&:album)
+      .limit(8)
+      .map(&:album).uniq
   end
 
   def load_recommendations
