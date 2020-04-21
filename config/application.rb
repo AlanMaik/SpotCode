@@ -12,6 +12,7 @@ module Spotcode
     config.load_defaults 6.0
     config.hosts.clear
     config.serve_static_assets = true
+    config.assets.prefix = '/public/assets'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
