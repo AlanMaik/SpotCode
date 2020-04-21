@@ -21,8 +21,8 @@ class Api::V1::DashboardController < ApplicationController
         .joins(:category, :songs)
         .where(category: heard_categories)
         .order('songs.played_count')
-        .select('distinct albums.*')
         .limit(12)
+        .uniq
     else
       @recommended_albums = Album.all.sample(12)
     end
